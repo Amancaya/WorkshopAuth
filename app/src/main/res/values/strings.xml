@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">WorkshopCampAuth</string>
+
+    <string name="com_auth0_client_id">U61w5Hd02kzd4QSxa94vcoIJyB1mZMRq</string>
+    <string name="com_auth0_domain">kaya96.auth0.com</string>
+    <string name="start">Iniciar</string>
 </resources>
