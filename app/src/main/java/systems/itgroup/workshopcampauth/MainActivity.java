@@ -4,9 +4,11 @@ import android.app.Dialog;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.auth0.android.Auth0;
 import com.auth0.android.authentication.AuthenticationException;
@@ -39,17 +41,17 @@ public class MainActivity extends AppCompatActivity {
                 .start(MainActivity.this, new AuthCallback() {
                     @Override
                     public void onFailure(@NonNull Dialog dialog) {
-
+                        dialog.show();
                     }
 
                     @Override
                     public void onFailure(AuthenticationException exception) {
-
+                        Log.e("Credentials", exception.getMessage());
                     }
 
                     @Override
                     public void onSuccess(@NonNull Credentials credentials) {
-
+                        Log.e("Credentials", ": "+ credentials.getAccessToken());
                     }
                 });
     }
